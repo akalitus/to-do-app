@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { NewItemForm } from './Components/NewItemForm';
-import { TodoList } from './Components/TodoList';
-import { Header } from './Components/Header';
-import TabMenu from './Components/TabMenu';
+import { NewItemForm } from './components/NewItemForm';
+import { TodoList } from './components/TodoList';
+import { Header } from './components/Header';
+import TabMenu from './components/TabMenu';
+import Footer from './components/Footer';
 
 function App() {
   const [tabList, setTabList] = useState(() => {
@@ -136,6 +137,7 @@ function App() {
           </>
         }
       </main>
+      <Footer />
     </>
   )
 }
