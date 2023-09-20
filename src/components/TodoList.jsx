@@ -1,21 +1,15 @@
-import PropTypes from 'prop-types'
 import { TodoItem } from './TodoItem';
 
-export function TodoList({ todos, setTodos }) {
+export function TodoList({ tabList, setTabList }) {
 
-  return <ul className="list">
-    {todos.length === 0 && 'No Todos'}
-    {todos.map((item) => {
+  return <ul className='list'>
+    {tabList.length === 0 && 'The list is empty'}
+    {tabList.map((item) => {
       return <TodoItem
         key={item.id}
         {...item}
-        setTodos={setTodos}
+        setTabList={setTabList}
       />
     })}
   </ul>
-}
-
-TodoList.propTypes = {
-  todos: PropTypes.array.isRequired,
-  setTodos: PropTypes.func.isRequired,
 }

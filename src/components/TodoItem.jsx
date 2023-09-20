@@ -1,43 +1,46 @@
-import PropTypes from 'prop-types'
+export function TodoItem({ setTabList, id, title, completed }) {
 
-export function TodoItem({ setTodos, id, title, completed }) {
-
-  function toggleItemState(id, completed) {
-    setTodos(currentTodos => {
-      return (currentTodos.map(item => {
-        if (item.id === id) {
-          return { ...item, completed };
+  function toggleItemState(id) {
+    setTabList(currentTabs => {
+      return (currentTabs.map(tab => {
+        if (tab.active) {
+          const newTodoList = tab.todoList.map(item => {
+            if (item.id === id) {
+              return { ...item, completed: !item.completed };
+            }
+            return item;
+          });
+          return { ...tab, todoList: newTodoList };
         }
-        return item;
+        return tab;
       }))
     })
   }
 
   function deleteItem(id) {
-    setTodos(currentTodos => {
-      return currentTodos.filter(item => item.id !== id);
-    })
+    setTabList(currentTabs => {
+      return currentTabs.map(tab => {
+        if (tab.active) {
+          const newTodoList = tab.todoList.filter(item => item.id !== id);
+          return { ...tab, todoList: newTodoList };
+        }
+        return tab;
+      });
+    });
   }
 
-  return <li>
+  return <li className='list__item'>
     <label>
       <input
-        type="checkbox"
+        type='checkbox'
         checked={completed}
         onChange={event => toggleItemState(id, event.target.checked)}
       />
       {title}
     </label>
     <button
-      className="button button_type_delete"
+      className='button button_type_delete'
       onClick={() => deleteItem(id)}
     >Delete</button>
   </li>
-}
-
-TodoItem.propTypes = {
-  setTodos: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  completed: PropTypes.bool.isRequired,
 }

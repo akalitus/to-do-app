@@ -1,33 +1,29 @@
-import { useState } from "react";
-import PropTypes from 'prop-types'
+import { useState } from 'react';
 
-export function NewItemForm({ updateTodoList }) {
+export function NewItemForm({ addNewItem }) {
   const [newItem, setNewItem] = useState('');
 
-  function addNewItem(event) {
+  function handleInputChange(event) {
     setNewItem(event.target.value)
   }
 
   function handleFormSubmit(event) {
     event.preventDefault();
 
-    updateTodoList(newItem);
+    addNewItem(newItem)
     setNewItem('');
   }
 
-  return <form onSubmit={handleFormSubmit} className='new-item-form'>
-    <div className='form-row'>
-      <label htmlFor="item">New Item</label>
-      <input
-        value={newItem}
-        type="text"
-        id="item"
-        onChange={addNewItem} />
-    </div>
-    <button className="button">Add</button>
+  return <form onSubmit={handleFormSubmit} className='new-form'>
+    <input
+      value={newItem}
+      type='text'
+      id='item'
+      placeholder='New Task'
+      minLength={1}
+      autoComplete="off"
+      required
+      onChange={handleInputChange} />
+    <button className='button'>Add</button>
   </form>
-}
-
-NewItemForm.propTypes = {
-  updateTodoList: PropTypes.func.isRequired
 }
