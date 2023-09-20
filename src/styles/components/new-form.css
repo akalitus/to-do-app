@@ -1,0 +1,18 @@
+.new-form {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  gap: 10px;
+}
+
+.new-form input {
+  outline: none;
+  border: 1px solid hsl(200, 100%, 40%);
+  background: hsl(200, 100%, 90%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: hsl(200, 100%, 10%);
+}
+
+.new-form input:focus {
+  border: 1px solid hsl(200, 100%, 70%);
+}
