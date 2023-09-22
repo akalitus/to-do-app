@@ -30,7 +30,7 @@
   outline: 1px solid hsl(200, 100%, 50%);
 }
 
-.list__item input {
+.list__item input[type="checkbox"] {
   position: absolute;
   width: 0;
   height: 0;
@@ -66,4 +66,25 @@
 
 .list__item:has(input:checked) label:hover::before {
   background: hsl(200, 100%, 30%);
+}
+
+.list__item:has(input[type='text']) {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px
+}
+
+.list__item-edited {
+  width: 100%;
+  outline: none;
+  border: 1px solid hsl(200, 100%, 40%);
+  background: hsl(200, 100%, 90%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: hsl(200, 100%, 10%);
+}
+
+.list__item-buttons {
+  display: flex;
+  gap: 20px;
 }

@@ -10,7 +10,6 @@ export function NewTabForm({ addNewTab }) {
   function handleFormSubmit(event) {
     event.preventDefault();
 
-    console.log(event.target)
     addNewTab(newItem);
     setNewItem('');
   }
