@@ -14,20 +14,25 @@ export function NewTabForm({ addNewTab }) {
     setNewItem('');
   }
 
-  return <form onSubmit={handleFormSubmit} className='new-form'>
-    <input
-      value={newItem}
-      type="text"
-      placeholder="New Tab"
-      minLength={1}
-      required
-      autoComplete="off"
-      onChange={addNewItem} />
+  return (
+    <form
+      onSubmit={handleFormSubmit}
+      className='new-form'>
+      <input
+        value={newItem}
+        type="text"
+        placeholder="New Tab"
+        minLength={1}
+        required
+        autoComplete="off"
+        onChange={addNewItem} />
 
-    <button
-      className="button button_type_new-list"
-    >
-      Add
-    </button>
-  </form>
+      <button
+        type='submit'
+        className="button button_type_new-list"
+      >
+        Add
+      </button>
+    </form>
+  )
 }

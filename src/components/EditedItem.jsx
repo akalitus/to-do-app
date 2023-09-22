@@ -3,11 +3,12 @@ import { useState } from "react";
 export function EditedItem({ setTabList, id, title }) {
   const [value, setValue] = useState(title);
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
+  const handleChange = (event) => {
+    setValue(event.target.value);
   }
 
-  function updateItem(id) {
+  function updateItem(event) {
+    event.preventDefault();
     setTabList(currentTabs => {
       return currentTabs.map(tab => {
         if (tab.active) {
@@ -23,25 +24,28 @@ export function EditedItem({ setTabList, id, title }) {
         return tab;
       });
     });
-    console.log(`new title for item ${id} is ${value}`)
   }
 
-  return <li className='list__item'>
-    <input
-      className='list__item-edited'
-      type='text'
-      onChange={handleChange}
-      value={value}
-      placeholder='Update task'
-    />
+  return (
+    <li className='list__item'>
+      <form
+        onSubmit={updateItem}
+        className='list__item-form'>
+        <input
+          className='list__item-edited'
+          type='text'
+          onChange={handleChange}
+          value={value}
+          placeholder='Update task'
+        />
 
-    <div className="list__item-buttons">
-      <button
-        className='button button_type_update'
-        onClick={() => updateItem(id)}
-      >
-        Update
-      </button>
-    </div>
-  </li>
+        <button
+          type='submit'
+          className='button button_type_update'
+        >
+          Update
+        </button>
+      </form>
+    </li>
+  )
 }

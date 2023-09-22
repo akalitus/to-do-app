@@ -1,5 +1,5 @@
 export function TabItem({ setTabList, id, title, active }) {
-  function changeTab(id) {
+  function changeTab() {
     setTabList(currentTabs => {
       return (currentTabs.map(item => {
         if (item.id === id) {
@@ -23,7 +23,7 @@ export function TabItem({ setTabList, id, title, active }) {
         value={title}
         id={id}
         checked={active}
-        onChange={event => changeTab(id, event.target.checked)}
+        onChange={changeTab}
       />
       {title}
     </label>

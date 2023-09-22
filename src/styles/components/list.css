@@ -68,7 +68,8 @@
   background: hsl(200, 100%, 30%);
 }
 
-.list__item:has(input[type='text']) {
+.list__item-form:has(input[type='text']) {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 35px

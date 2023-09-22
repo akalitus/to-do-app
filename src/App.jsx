@@ -122,18 +122,22 @@ function App() {
           && <>
             <NewItemForm
               addNewItem={addNewItem} />
-            <TodoList
-              tabList={tabList.length
-                ? tabList.find(item => item.active === true).todoList
-                : []}
-              setTabList={setTabList} />
+
             <TabMenu
-              id={tabList.length
-                ? tabList.find(item => item.active === true).id
-                : null}
+              id={
+                tabList.length
+                && tabList.find(item => item.active === true).id
+              }
               clearTab={clearTab}
               removeTab={removeTab}
             />
+
+            <TodoList
+              tabList={
+                tabList.length
+                && tabList.find(item => item.active === true).todoList
+              }
+              setTabList={setTabList} />
           </>
         }
       </main>

@@ -11,6 +11,7 @@ function Footer() {
           alt="GitHub"
         />
       </a>
+      
       <p className="copyright">
         © Copyright
         {' '}

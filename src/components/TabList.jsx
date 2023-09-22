@@ -1,5 +1,5 @@
 import { TabItem } from './TabItem'
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 export function TabList({ setTabList, tabList }) {
   const listRef = useRef(null);

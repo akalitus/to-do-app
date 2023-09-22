@@ -1,6 +1,6 @@
 export function TodoItem({ setTabList, id, title, completed }) {
 
-  function toggleItemState(id) {
+  function toggleItemState() {
     setTabList(currentTabs => {
       return (currentTabs.map(tab => {
         if (tab.active) {
@@ -17,7 +17,7 @@ export function TodoItem({ setTabList, id, title, completed }) {
     })
   }
 
-  function deleteItem(id) {
+  function deleteItem() {
     setTabList(currentTabs => {
       return currentTabs.map(tab => {
         if (tab.active) {
@@ -29,7 +29,7 @@ export function TodoItem({ setTabList, id, title, completed }) {
     });
   }
 
-  function editItem(id) {
+  function editItem() {
     setTabList(currentTabs => {
       return currentTabs.map(tab => {
         if (tab.active) {
@@ -52,22 +52,24 @@ export function TodoItem({ setTabList, id, title, completed }) {
       <input
         type='checkbox'
         checked={completed}
-        onChange={event => toggleItemState(id, event.target.checked)}
+        onChange={toggleItemState}
       />
       {title}
     </label>
 
     <div className="list__item-buttons">
       <button
+        type='button'
         className='button'
-        onClick={() => editItem(id)}
+        onClick={editItem}
       >
         Edit
       </button>
 
       <button
+        type='button'
         className='button button_type_delete'
-        onClick={() => deleteItem(id)}
+        onClick={deleteItem}
       >
         Delete
       </button>

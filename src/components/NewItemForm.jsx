@@ -14,16 +14,25 @@ export function NewItemForm({ addNewItem }) {
     setNewItem('');
   }
 
-  return <form onSubmit={handleFormSubmit} className='new-form'>
-    <input
-      value={newItem}
-      type='text'
-      id='item'
-      placeholder='New Task'
-      minLength={1}
-      autoComplete="off"
-      required
-      onChange={handleInputChange} />
-    <button className='button'>Add</button>
-  </form>
+  return (
+    <form
+      onSubmit={handleFormSubmit}
+      className='new-form'>
+      <input
+        value={newItem}
+        type='text'
+        id='item'
+        placeholder='New Task'
+        minLength={1}
+        autoComplete="off"
+        required
+        onChange={handleInputChange} />
+
+      <button
+        type='submit'
+        className='button'>
+        Add
+      </button>
+    </form>
+  )
 }

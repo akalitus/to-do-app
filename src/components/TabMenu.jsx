@@ -2,6 +2,7 @@ function TabMenu({ id, clearTab, removeTab }) {
   return (
     <div className="tab-menu">
       <button
+        type='button'
         className='button'
         onClick={() => clearTab(id)}
       >
@@ -9,6 +10,7 @@ function TabMenu({ id, clearTab, removeTab }) {
       </button>
 
       <button
+        type='button'
         className='button'
         onClick={() => removeTab(id)}
       >
