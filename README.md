@@ -6,9 +6,11 @@ The app is deployed and can be accessed at [To-Do App](https://sergey-ladorski-t
 
 ## Features
 
-### Add, Delete, and Mark Tasks as Completed
+### Add, Edit, Delete, and Mark Tasks as Completed
 
 Adding tasks to your to-do list is a breeze with this app. Simply enter the task details and hit the add button. If you no longer need a task, you can easily delete it with just one click. Additionally, you can mark tasks as completed to keep track of your progress.
+
+Adding tasks to your to-do list is a breeze with this app. Simply enter the task details and hit the add button. If you no longer need a task, you can easily delete it with just one click. Additionally, you can mark tasks as completed to keep track of your progress. What's more, you can edit existing tasks to modify their details whenever needed.
 
 ### Multi-Tab Functionality
 
