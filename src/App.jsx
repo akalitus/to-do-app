@@ -18,9 +18,36 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem('tabList', JSON.stringify(tabList));
-    hideScrollbar();
   },
     [tabList]);
+
+  useEffect(() => {
+    function handleScrollBar(listSelector, itemSelector, isRow) {
+      const list = document.querySelector(`.${listSelector}`);
+
+      if (list) {
+        const items = list.querySelectorAll(`.${itemSelector}`);
+        let totalSize = 0;
+
+        items.forEach(item => {
+          totalSize += isRow
+            ? item.offsetWidth
+            : item.offsetHeight;
+
+          totalSize += parseFloat(getComputedStyle(list).gap);
+        });
+
+        if (totalSize < (isRow ? list.offsetWidth : list.offsetHeight)) {
+          list.style.overflow = 'hidden';
+        } else {
+          list.style.overflow = 'auto';
+        }
+      }
+    }
+
+    handleScrollBar('tab-list', 'tab-item', true);
+    handleScrollBar('list', 'list__item', false);
+  });
 
   function addNewTab(title) {
     setTabList(currentTabs => {
@@ -37,24 +64,6 @@ function App() {
         }
       ]
     })
-  }
-
-  function hideScrollbar() {
-    const tabList = document.querySelector('.tab-list');
-    const tabItems = tabList.querySelectorAll('.tab-item');
-
-    let totalWidth = 0;
-
-    tabItems.forEach(item => {
-      totalWidth += item.offsetWidth;
-      totalWidth += parseFloat(getComputedStyle(item).gap);
-    });
-
-    if (totalWidth < tabList.offsetWidth) {
-      tabList.style.overflow = 'hidden';
-    } else {
-      tabList.style.overflow = 'auto';
-    }
   }
 
   function addNewItem(title) {
