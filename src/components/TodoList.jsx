@@ -1,24 +1,35 @@
+import { useEffect, useRef } from 'react';
 import { EditedItem } from './EditedItem';
 import { TodoItem } from './TodoItem';
 
-export function TodoList({ tabList, setTabList }) {
+export function TodoList({ taskList, setTabList }) {
+  const listRef = useRef(null);
+  const prevListLength = useRef(taskList.length);
 
-  return <ul className='list'>
-    {tabList.length === 0 && 'The list is empty'}
-    {tabList.map((item) => {
+  useEffect(() => {
+    if (taskList.length > prevListLength.current) {
+      if (listRef.current) {
+        const listContainer = listRef.current;
+        const listItems = listContainer.querySelectorAll('.list__item');
+        const topElement = listItems[listItems.length - 1];
+  
+        if (topElement) {
+          topElement.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+        }
+      }
+    }
 
-      return item.editMode === true
-        ? <EditedItem
-          key={item.id}
-          {...item}
-          setTabList={setTabList}
-        />
-        :
-        <TodoItem
-          key={item.id}
-          {...item}
-          setTabList={setTabList}
-        />
-    })}
-  </ul>
+    prevListLength.current = taskList.length;
+  }, [taskList]);
+
+  return (
+    <ul className='list' ref={listRef}>
+      {taskList.length === 0 && 'The list is empty'}
+      {taskList.map((item) => {
+        return item.editMode === true
+          ? <EditedItem key={item.id} {...item} setTabList={setTabList} />
+          : <TodoItem key={item.id} {...item} setTabList={setTabList} />
+      })}
+    </ul>
+  );
 }
