@@ -1,7 +1,7 @@
 .list {
   position: relative;
   margin: 0;
-  padding: 0 0 10px;
+  padding: 0 10px 0 0;
   max-height: 400px;
   height: min-content;
   display: flex;
@@ -12,7 +12,7 @@
 }
 
 .list__item:has(input:checked) label {
-  color: hsl(200, 20%, 40%);
+  color: #a0a0a0;
 }
 
 .list__item {
@@ -31,7 +31,7 @@
 }
 
 .list__item:has(input:focus-visible) label {
-  outline: 1px solid hsl(200, 100%, 50%);
+  outline: 1px solid #5f84db9c;
 }
 
 .list__item input[type="checkbox"] {
@@ -51,42 +51,42 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  background: hsl(200, 100%, 90%);
+  background: #e2e3e3;
   transition: all 0.3s ease;
 }
 
 .list__item label:hover::before {
-  background: hsl(200, 100%, 80%);
+  background: #5f85db;
 }
 
 .list__item:has(input:checked) label::before {
   content: "✔";
-  background: hsl(200, 100%, 40%);
+  background: #5f84db9c;
   font-size: 10px;
   font-weight: bold;
-  color: hsl(200, 100%, 90%);
+  color: #e2e3e3;
   transition: all 0.3s ease;
 }
 
 .list__item:has(input:checked) label:hover::before {
-  background: hsl(200, 100%, 30%);
+  background: #353941;
 }
 
 .list__item-form:has(input[type='text']) {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 35px
+  gap: 15px
 }
 
 .list__item-edited {
   width: 100%;
   outline: none;
-  border: 1px solid hsl(200, 100%, 40%);
-  background: hsl(200, 100%, 90%);
+  border: 1px solid #5f84db9c;
+  background: #e2e3e3;
   border-radius: 5px;
   padding: 5px 10px;
-  color: hsl(200, 100%, 10%);
+  color: #26282b;
 }
 
 .list__item-buttons {

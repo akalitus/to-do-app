@@ -10,25 +10,27 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  border: 1px solid hsl(200, 100%, 40%);
-  background: hsl(200, 100%, 90%);
+  border: none;
+  border-radius: 5px;
+  background: #e8e8e8a4;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  border: 1px solid hsl(200, 100%, 40%);
-  background: hsl(200, 100%, 30%);
+  border: 1px solid #e8e8e8a4;
+  border-radius: 5px;
+  background: #353941;
   transition: all 0.3s ease;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(200, 100%, 30%, 0.9);
+  background: #26282b;
 }
 
 .tab-item {
@@ -46,9 +48,7 @@
 
 .tab-item__label:has(.tab-item__input:checked) {
   z-index: 1;
-  border-color: #428bca;
-  background: hsl(200, 100%, 30%);
-  box-shadow: 0 3px 0 -1px #59c876, inset 0 5px 0 -1px #59c876;
+  background: #5f85db;
 }
 
 .tab-item__label {
@@ -58,12 +58,13 @@
   width: max-content;
   display: flex;
   flex-wrap: nowrap;
-  border: 1px solid hsl(200, 100%, 50%);
-  background: hsl(200, 100%, 50%, 0.2);
+  border: none;
+  border-radius: 5px;
+  background: #676a70;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .tab-item__label:hover {
-  background: hsl(200, 100%, 30%);
+  background: #5f84db9c;
 }

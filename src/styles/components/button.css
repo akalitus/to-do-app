@@ -1,7 +1,7 @@
 .button {
-  background: hsl(200, 100%, 50%, 0.1);
-  border: 1px solid hsl(200, 100%, 50%);
-  color: hsl(200, 100%, 50%);
+  background: #5f85db;
+  border: none;
+  color: #e2e3e3;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -11,19 +11,26 @@
 
 .button:hover,
 .button:focus-visible {
-  background: hsl(200, 100%, 50%, 0.2);
+  background: #5f84db9c;
 }
 
 .button.button_type_delete {
-  background: hsl(0, 100%, 40%, 0.1);
-  border: 1px solid hsl(0, 100%, 40%);
-  color: hsl(0, 100%, 40%);
+  background: #fc6042;
   transition: all 0.3s ease;
 }
 
-.button.button_type_delete:hover,
-.button.button_type_delete:focus-visible {
-  background: hsl(0, 100%, 40%, 0.2);
+.button_type_delete:hover,
+.button_type_delete:focus-visible {
+  background: #fc6142a1;
+}
+
+.button_type_update {
+  background: #3cda9f;
+}
+
+.button_type_update:hover,
+.button_type_update:focus-visible {
+  background: #3cdaa0aa;
 }
 
 .button_type_new-list {

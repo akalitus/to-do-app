@@ -15,8 +15,8 @@ body {
   padding: 15px;
   margin: 0 auto;
   width: 500px;
-  color: hsl(200, 100%, 90%);
-  background: #333;
+  color: #e2e3e3;
+  background: #353941;
 }
 
 @media (max-width: 500px) {
