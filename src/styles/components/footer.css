@@ -1,0 +1,40 @@
+.footer {
+  padding: 20px 0 20px;
+  display: flex;
+  flex-shrink: 0;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #676a70;
+}
+
+@media (max-width: 500px) {
+  .footer {
+    gap: 10px;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link__image {
+  width: auto;
+  height: 35px;
+  transition: all 0.3s ease;
+}
+
+.link__image:hover {
+  filter: invert(59%) sepia(11%) saturate(0%) hue-rotate(233deg) brightness(94%) contrast(93%);
+  box-shadow: 0 0.5em 0.5em -0.4em #000000;
+  transform: translateY(-0.25em);
+}
+
+footer .copyright a {
+  color: #e8e8e8;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+footer .copyright a:hover {
+  color: #908f8f;
+}

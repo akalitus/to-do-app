@@ -1,0 +1,9 @@
+@import "./base.css";
+@import "./components/header.css";
+@import "./components/main.css";
+@import "./components/footer.css";
+@import "./components/new-form.css";
+@import "./components/button.css";
+@import "./components/tab-list.css";
+@import "./components/list.css";
+@import "./components/tab-menu.css";
